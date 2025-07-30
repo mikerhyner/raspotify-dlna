@@ -47,6 +47,7 @@ Add the following cronjob for user pi using cronjob -e:
 ```
 * * * * *       /usr/local/bin/librespot_terminator.sh; /usr/local/bin/librespot_launcher.sh
 ```
+This is to scan the network every minute so new (recently turned on) devices will be seen.
 
 Finally reboot the Raspberry PI to start everything.
 
