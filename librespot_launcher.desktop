@@ -1,0 +1,4 @@
+[Desktop Entry]
+Type=Application
+Name=Librespot
+Exec=/usr/local/bin/librespot_launcher.sh
