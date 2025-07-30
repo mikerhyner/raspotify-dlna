@@ -49,3 +49,7 @@ Add the following cronjob for user pi using cronjob -e:
 ```
 
 Finally reboot the Raspberry PI to start everything.
+
+Then in the Spotify app, you should see some new devices beginning with "raspotify_{devicename}_dlna".
+
+There are also some special, internal devices like "raspotify_alsa_output.platform-...", that one is the local audio output of your Raspberry Pi. The others are some default Pulseaudio sinks like raspotify_upnp, raspotify_rtp and raspotify_combined, which may be used from other devices or applications, when streaming to them.
