@@ -5,15 +5,15 @@ while ! pidof pulseaudio-dlna > /dev/null; do sleep 1; done
 sleep 3
 pactl list sinks | grep "Name:" | cut -d ' ' -f 2 | while read device
 do
-  name="raspotify_$device"
-  for running in $(ps -efw | grep "librespot " | sed -e 's:.*--name \(.*\) --.*:\1:' | grep -v grep);
+  for running in $(ps -efw | grep "librespot " | sed -e 's:.*--device \(.*\).*:\1:' | grep -v grep);
   do
-    if [ "$name" == "$running" ]
+    if [ "$device" == "$running" ]
     then
-      echo "not starting process $name"
+      echo "not starting process for $device"
       continue 2
     fi
   done
+  name=$(pactl list sinks | grep -A1 "Name: $device" | tail -1 | cut -d " " -f 2-)
   echo "starting process $name"
-  librespot --backend pulseaudio --name $name --device $device &
+  librespot --backend pulseaudio --name "$name" --device $device &
 done
