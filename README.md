@@ -12,10 +12,16 @@ echo "deb [signed-by=/usr/share/keyrings/raspotify_key.asc] https://dtcooper.git
 apt install raspotify pulseaudio-dlna pulseaudio-utils
 ```
 
+By default, pipewire-pulse is installed. But we want pulseaudio-module-gsettings, as we need this. To install this package, thus removing pipewire-pulse, and avoid pipewire-pulse to be installed later by mistale, e.g. with an update, run:
+```
+apt install pulseaudio-module-gsettings
+apt-mark hold pipewire-pulse
+```
+
 Then copy the required files from this repository to Raspberry PI:
 `scp *.desktop *.sh pi@rasspi`
 
-Also as root, put the two files librespot_launcher and librespot_terminator to /usr/local/bin/:
+Again as root, put the two files librespot_launcher and librespot_terminator to /usr/local/bin/:
 ```
 cp ~pi/librespot_launcher.sh rasspi:/usr/local/bin/
 cp ~pilibrespot_terminator.sh /usr/local/bin/
