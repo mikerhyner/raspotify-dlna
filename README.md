@@ -1,10 +1,13 @@
-# raspotify
+# raspotify-dlna
 Spotify-To-DLNA Gateway
 
-The idea of this procect was, to have a small device (e.g. a rasspberry pi 4), that acts as a gateway for Spotify to DLNA cabable devices, which have not Spotify functionality built in.
+## Introduction ##
+The idea of this procect was, to have a small device (e.g. a rasspberry pi 4), that acts as a gateway for Spotify to DLNA caabble devices, which have not Spotify functionality built in.
 
+## OS ##
 As the OS, install Raspberry Pi OS (previously called Raspbian), to be found on https://www.raspberrypi.com/software/operating-systems/. Choose "Raspberry Pi OS with desktop" bcause we use PulseAudio.
 
+## Package Installation ##
 This requires installation of several Debian packages. To install them, do as root:
 
 ```
@@ -18,6 +21,7 @@ apt install pulseaudio-module-gsettings
 apt-mark hold pipewire-pulse
 ```
 
+## Configuration ##
 Then copy the required files from this repository to Raspberry PI:
 `scp *.desktop *.sh pi@rasspi`
 
@@ -57,11 +61,12 @@ This is to scan the network every minute so new (recently turned on) devices wil
 
 Finally reboot the Raspberry PI to start everything.
 
-Then in the Spotify app, you should see some new devices beginning with "raspotify_{devicename}_dlna".
+## Usage ##
+In the Spotify app, you should see some new devices beginning with "raspotify_{devicename}_dlna".
 
 There are also some special, internal devices like "raspotify_alsa_output.platform-...", that one is the local audio output of your Raspberry Pi. The others are some default Pulseaudio sinks like raspotify_upnp, raspotify_rtp and raspotify_combined, which may be used from other applications, when streaming to them.
 
-'' Troubleshooting ''
+## Troubleshooting ##
 
 If librespot suddenly stops playing songs, add the following to the local hosts file:
 ```
