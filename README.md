@@ -61,7 +61,7 @@ Then in the Spotify app, you should see some new devices beginning with "raspoti
 
 There are also some special, internal devices like "raspotify_alsa_output.platform-...", that one is the local audio output of your Raspberry Pi. The others are some default Pulseaudio sinks like raspotify_upnp, raspotify_rtp and raspotify_combined, which may be used from other applications, when streaming to them.
 
-=== Troubleshooting ===
+'' Troubleshooting ''
 
 If librespot suddenly stops playing songs, add the following to the local hosts file:
 ```
