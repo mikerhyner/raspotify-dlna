@@ -2,7 +2,7 @@
 Spotify-To-DLNA Gateway
 
 ## Introduction ##
-The idea of this procect was, to have a small device (e.g. a rasspberry pi 4), that acts as a gateway for Spotify to DLNA caabble devices, which have not Spotify functionality built in.
+The idea of this procect was, to have a small device (e.g. a raspberry pi 4), that acts as a gateway for Spotify to DLNA capable devices, which have not Spotify functionality built in.
 
 ## OS Installation ##
 As the OS, install Raspberry Pi OS (previously called Raspbian), to be found on https://www.raspberrypi.com/software/operating-systems/. Choose "Raspberry Pi OS with desktop" bcause we use PulseAudio.
